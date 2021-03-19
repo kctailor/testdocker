@@ -1,0 +1,20 @@
+version: '3'
+services:
+  web:
+    image: sdg1:latest
+    container_name: sdgtest
+    build: .
+    ports:
+      - "80:80"
+   # environment:
+   #   - wwwroot=http://localhost/src
+   #   - dataroot=/var/www/moodledata_LMS_2_0
+   #   - DEBUG=true
+   #   - DB_HOST=172.16.15.5
+   #   - DB_DATABASE=sun_abilitic
+   #   - DB_USERNAME=zingHr
+   #   - DB_PASSWORD=Power@004
+   #   - DB_PORT=3306
+    volumes:
+      - ./src/:/home/application/src
+    restart: unless-stopped
